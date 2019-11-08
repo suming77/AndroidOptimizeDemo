@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--include标签抽取公共部分的布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#E91E63"
+        android:padding="8dp"
+        android:text="布局优化-include-1"/>
+</LinearLayout>

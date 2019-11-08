@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.example.androidoptimizedemo.layoutOpt.ConstaintLayoutActivity;
+import com.example.androidoptimizedemo.layoutOpt.ImageOptActivity;
+import com.example.androidoptimizedemo.layoutOpt.IncludeActivity;
 import com.example.androidoptimizedemo.memoryOpt.AsyncTaskActivity;
 import com.example.androidoptimizedemo.memoryOpt.HandlerActivity;
 import com.example.androidoptimizedemo.memoryOpt.ListenerActivity;
@@ -17,14 +20,13 @@ import com.example.androidoptimizedemo.memoryOpt.ThreadActivity;
  * Android性能优化实例
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
-    private static String mStaticMember;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        findViewById(R.id.btn_get_sync).setOnClickListener(this);
         findViewById(R.id.btn_get_sync).setOnClickListener(this);
         findViewById(R.id.btn_get_async).setOnClickListener(this);
         findViewById(R.id.btn_post_sync_str).setOnClickListener(this);
@@ -66,10 +68,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cls = ResActivity.class;
                 break;
             case R.id.btn_post_form:
+                cls = IncludeActivity.class;
                 break;
             case R.id.btn_post_streaming:
+                cls = ConstaintLayoutActivity.class;
                 break;
             case R.id.btn_post_multipart:
+                cls = ImageOptActivity.class;
                 break;
             case R.id.btn_header_set_read:
                 break;

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_get_sync"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="GET同步请求"/>
+
+        <Button
+            android:id="@+id/btn_get_async"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#F44336"
+            android:padding="8dp"
+            android:text="GET异步请求"/>
+
+        <Button
+            android:id="@+id/btn_post_sync_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#E91E63"
+            android:padding="8dp"
+            android:text="Post同步请求(string)"/>
+
+        <Button
+            android:id="@+id/btn_post_async_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#9C27B0"
+            android:padding="8dp"
+            android:text="Post异步请求(string)"/>
+
+        <Button
+            android:id="@+id/btn_post_key_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#673AB7"
+            android:padding="8dp"
+            android:text="Post异步请求(键值对)"/>
+
+        <ImageView
+            android:id="@+id/iv_old"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/woman"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/iv_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_samplingRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_sizeCompress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>

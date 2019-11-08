@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--layout_constraintTop_toTopOf="parent":控件的顶部位于父控件的顶部
+        layout_constraintRight_toRightOf="parent"：控件的右边位于父控件的右边
+        layout_constraintLeft_toLeftOf="parent"：控件的左边位于父控件的左边-->
+    <TextView
+        android:id="@+id/tv_constrain1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#9C27B0"
+        android:padding="10dp"
+        android:text="ConstraintLayout1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_constrain2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#E91E63"
+        android:padding="10dp"
+        android:text="ConstraintLayout2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/tv_constrain3"
+        app:layout_constraintTop_toBottomOf="@+id/tv_constrain1"/>
+
+    <TextView
+        android:id="@+id/tv_constrain3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#2196F3"
+        android:padding="10dp"
+        android:text="ConstraintLayout3"
+        app:layout_constraintLeft_toRightOf="@+id/tv_constrain2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_constrain1"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--include标签抽取公共部分的布局
+      它的布局层级：LinearLayout-> Button
+                               -> LinearLayout ->Button
+      -->
+    <include layout="@layout/include_btn"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#9C27B0"
+        android:padding="8dp"
+        android:text="布局优化2"/>
+
+    <!--merge标签
+      它的布局层级：LinearLayout-> Button
+                               -> merge ->Button
+                               -->
+    <include layout="@layout/include_merge_layout"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <ViewStub
+        android:id="@+id/view_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout="@layout/layout_viewstub"/>
+
+</LinearLayout>
