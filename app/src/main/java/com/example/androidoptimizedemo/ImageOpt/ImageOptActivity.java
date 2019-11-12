@@ -1,10 +1,11 @@
-package com.example.androidoptimizedemo.layoutOpt;
+package com.example.androidoptimizedemo.ImageOpt;
 
 import android.Manifest;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.RectF;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -19,8 +20,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.example.androidoptimizedemo.R;
+import com.example.androidoptimizedemo.utils.PermissionUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -31,27 +32,33 @@ import java.io.FileOutputStream;
  * @创建时间 2019/11/8 9:44
  * @类描述 ${TODO}图片优化
  */
-public class ImageOptActivity extends AppCompatActivity implements PermissionUtil.RequestPermissionCallBack, View.OnClickListener {
+public class ImageOptActivity extends AppCompatActivity implements PermissionUtil.RequestPermissionCallBack,
+        View.OnClickListener {
     private static final String TAG = ImageOptActivity.class.getSimpleName();
-    private String[] permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-    private ImageView mIv_old;
+
     private ImageView mIv_quality;
     private ImageView mIv_samplingRate;
     private ImageView mIv_sizeCompress;
+    private ImageView mIv_matrix;
+
+    //权限
+    private String[] permissions = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_opt);
 
-        findViewById(R.id.btn_get_sync).setOnClickListener(this);
-        findViewById(R.id.btn_get_async).setOnClickListener(this);
-        findViewById(R.id.btn_post_sync_str).setOnClickListener(this);
+        findViewById(R.id.btn_quality_compress).setOnClickListener(this);
+        findViewById(R.id.btn_sampling_rate_compress).setOnClickListener(this);
+        findViewById(R.id.btn_size_compress).setOnClickListener(this);
+        findViewById(R.id.tv_back).setOnClickListener(this);
 
-        mIv_old = findViewById(R.id.iv_old);
         mIv_quality = findViewById(R.id.iv_quality);
         mIv_samplingRate = findViewById(R.id.iv_samplingRate);
         mIv_sizeCompress = findViewById(R.id.iv_sizeCompress);
+        mIv_matrix = findViewById(R.id.iv_matrix);
 
         //获取权限
         PermissionUtil.checkPermission(this, permissions, 1001, this);
@@ -63,6 +70,7 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.woman);
         Log.e(TAG, "压缩前：" + getBitmapSize(bitmap));
 
+        //存放文件相关
         File sdDir = null;
         if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             sdDir = Environment.getExternalStorageDirectory();
@@ -73,14 +81,17 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
         }
 
         switch (v.getId()) {
-            case R.id.btn_get_sync:
+            case R.id.btn_quality_compress://质量压缩
                 qualityCompress(bitmap, new File(shareImgDir, "imageOpt_woman" + ".JPG"));
                 break;
-            case R.id.btn_get_async:
+            case R.id.btn_sampling_rate_compress://采样率压缩
                 samplingRateCompress("", new File(shareImgDir, "imageOpt_woman2" + ".JPG"));
                 break;
-            case R.id.btn_post_sync_str:
+            case R.id.btn_size_compress://尺寸压缩
                 sizeCompress(bitmap, new File(shareImgDir, "imageOpt_woman3" + ".JPG"));
+                break;
+            case R.id.tv_back://返回
+                finish();
                 break;
         }
     }
@@ -132,7 +143,7 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
      */
     private void samplingRateCompress(String path, File file) {
         //数值越高，像素越低
-        int inSampleSize = 8;
+        int inSampleSize = 3;
         //设置采样率
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = inSampleSize;
@@ -150,6 +161,8 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
             fos.write(bos.toByteArray());
             Log.e(TAG, "采样率压缩后：" + fos.getChannel().size());
             mIv_samplingRate.setImageBitmap(BitmapFactory.decodeFile(file.toString()));
+            setMatrix(bitmap, mIv_matrix);
+
             fos.close();
             bos.close();
         } catch (Exception e) {
@@ -165,7 +178,7 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
      */
     private void sizeCompress(Bitmap bitmap, File file) {
         //压缩尺寸倍数，值越大，尺寸越小
-        int ratio = 5;
+        int ratio = 3;
         //压缩Bitmap得到对应的尺寸
         Bitmap result = Bitmap.createBitmap(bitmap.getWidth() / ratio, bitmap.getHeight() / ratio, Bitmap.Config.ARGB_8888);
         //创建画笔
@@ -210,6 +223,25 @@ public class ImageOptActivity extends AppCompatActivity implements PermissionUti
         return bitmap.getRowBytes() * bitmap.getHeight();
     }
 
+    /**
+     * 设置矩阵
+     *
+     * @param bitmap    图片
+     * @param imageView 图片控件
+     */
+    private void setMatrix(Bitmap bitmap, ImageView imageView) {
+        Matrix matrix = new Matrix();
+//        matrix.setScale(2, 2, 0f, 0f);
+//        canvas.concat(matrix);
+//        canvas.drawBitmap(bitmap, 0, 0, paint);
+//        //或者
+//        canvas.drawBitmap(bitmap, matrix, paint);
+
+        matrix.postScale(2, 2, 0, 0);
+        imageView.setScaleType(ImageView.ScaleType.MATRIX);
+        imageView.setImageMatrix(matrix);
+        imageView.setImageBitmap(bitmap);
+    }
 
     //4.重写权限回调方法
     @Override

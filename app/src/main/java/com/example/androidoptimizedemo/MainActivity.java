@@ -4,9 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
-import com.example.androidoptimizedemo.layoutOpt.ConstaintLayoutActivity;
-import com.example.androidoptimizedemo.layoutOpt.ImageOptActivity;
+import com.example.androidoptimizedemo.layoutOpt.ConstraintLayoutActivity;
+import com.example.androidoptimizedemo.ImageOpt.ImageOptActivity;
 import com.example.androidoptimizedemo.layoutOpt.IncludeActivity;
 import com.example.androidoptimizedemo.memoryOpt.AsyncTaskActivity;
 import com.example.androidoptimizedemo.memoryOpt.HandlerActivity;
@@ -18,6 +19,7 @@ import com.example.androidoptimizedemo.memoryOpt.ThreadActivity;
 
 /**
  * Android性能优化实例
+ * 我的博客：https://blog.csdn.net/m0_37796683
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     @Override
@@ -26,54 +28,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        findViewById(R.id.btn_get_sync).setOnClickListener(this);
-        findViewById(R.id.btn_get_sync).setOnClickListener(this);
-        findViewById(R.id.btn_get_async).setOnClickListener(this);
-        findViewById(R.id.btn_post_sync_str).setOnClickListener(this);
-        findViewById(R.id.btn_post_async_str).setOnClickListener(this);
-        findViewById(R.id.btn_post_key_value).setOnClickListener(this);
-        findViewById(R.id.btn_post_key_value_more).setOnClickListener(this);
-        findViewById(R.id.btn_post_file).setOnClickListener(this);
-        findViewById(R.id.btn_post_form).setOnClickListener(this);
-        findViewById(R.id.btn_post_streaming).setOnClickListener(this);
-        findViewById(R.id.btn_post_multipart).setOnClickListener(this);
+        findViewById(R.id.btn_not_static).setOnClickListener(this);
+        findViewById(R.id.btn_async_task).setOnClickListener(this);
+        findViewById(R.id.btn_thread).setOnClickListener(this);
+        findViewById(R.id.btn_handler).setOnClickListener(this);
+        findViewById(R.id.btn_single_instance).setOnClickListener(this);
+        findViewById(R.id.btn_listener).setOnClickListener(this);
+        findViewById(R.id.btn_res).setOnClickListener(this);
+        findViewById(R.id.btn_include).setOnClickListener(this);
+        findViewById(R.id.btn_constraint_layout).setOnClickListener(this);
+        findViewById(R.id.btn_image_opt).setOnClickListener(this);
+
         findViewById(R.id.btn_header_set_read).setOnClickListener(this);
         findViewById(R.id.btn_timeout).setOnClickListener(this);
-
     }
 
     @Override
     public void onClick(View v) {
         Class<?> cls = null;
         switch (v.getId()) {
-            case R.id.btn_get_sync:
+            case R.id.btn_not_static://非静态
                 cls = NotStaticActivity.class;
                 break;
-            case R.id.btn_get_async:
+            case R.id.btn_async_task://AsyncTask
                 cls = AsyncTaskActivity.class;
                 break;
-            case R.id.btn_post_sync_str:
+            case R.id.btn_thread://线程类
                 cls = ThreadActivity.class;
                 break;
-            case R.id.btn_post_async_str:
+            case R.id.btn_handler://Handler
                 cls = HandlerActivity.class;
                 break;
-            case R.id.btn_post_key_value:
-                cls = SingleInstanceClass.class;
+            case R.id.btn_single_instance://static修饰的成员变量：单例
+                SingleInstanceClass instanceClass = new SingleInstanceClass(this);
                 break;
-            case R.id.btn_post_key_value_more:
+            case R.id.btn_listener://监听
                 cls = ListenerActivity.class;
                 break;
-            case R.id.btn_post_file:
+            case R.id.btn_res://相关资源
                 cls = ResActivity.class;
                 break;
-            case R.id.btn_post_form:
+            case R.id.btn_include://布局优化-<include>标签 <merge>标签 <Space>标签 <ViewStub>标签
                 cls = IncludeActivity.class;
                 break;
-            case R.id.btn_post_streaming:
-                cls = ConstaintLayoutActivity.class;
+            case R.id.btn_constraint_layout://ConstraintLayout布局
+                cls = ConstraintLayoutActivity.class;
                 break;
-            case R.id.btn_post_multipart:
+            case R.id.btn_image_opt://图片优化相关
                 cls = ImageOptActivity.class;
                 break;
             case R.id.btn_header_set_read:
@@ -83,6 +84,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
-        startActivity(new Intent(this, cls));
+
+        if (cls != null) {
+            startActivity(new Intent(this, cls));
+        } else {
+            Toast.makeText(this, "无展示效果，请看源码", Toast.LENGTH_SHORT).show();
+        }
     }
 }

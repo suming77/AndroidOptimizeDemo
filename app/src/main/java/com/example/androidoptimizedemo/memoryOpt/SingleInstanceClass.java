@@ -1,7 +1,6 @@
 package com.example.androidoptimizedemo.memoryOpt;
 
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 
 /**
  * @创建者 mingyan.su
@@ -9,8 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * @类描述 ${TODO}static修饰的成员变量造成内存泄漏问题以及解决方法
  * 经典例子：单例模式持有context
  */
-public class SingleInstanceClass extends AppCompatActivity {
-    private static final String TAG = SingleInstanceClass.class.getSimpleName();
+public class SingleInstanceClass {
 
     private Context mContext;
     private static SingleInstanceClass sInstanceClass;
@@ -46,10 +44,11 @@ public class SingleInstanceClass extends AppCompatActivity {
     /**
      * 静态方法的使用
      * 创建的对象建议不要全局化，全局话变量必须加上static,全局化的变量或者对象会造成内存泄漏
+     *
      * @param str
      * @return
      */
-    public static String getStaticMember(String str){
+    public static String getStaticMember(String str) {
         return str;
     }
 }

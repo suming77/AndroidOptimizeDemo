@@ -9,67 +9,130 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_get_sync"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="GET同步请求"/>
+            android:background="#e7e7e7"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_get_async"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#F44336"
-            android:padding="8dp"
-            android:text="GET异步请求"/>
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="返回"/>
 
-        <Button
-            android:id="@+id/btn_post_sync_str"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#E91E63"
-            android:padding="8dp"
-            android:text="Post同步请求(string)"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="图片优化相关"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_post_async_str"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#9C27B0"
-            android:padding="8dp"
-            android:text="Post异步请求(string)"/>
-
-        <Button
-            android:id="@+id/btn_post_key_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="#673AB7"
-            android:padding="8dp"
-            android:text="Post异步请求(键值对)"/>
 
         <ImageView
             android:id="@+id/iv_old"
             android:layout_width="wrap_content"
-            android:src="@mipmap/woman"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/woman"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="原图"
+            android:textSize="14sp"/>
+
         <ImageView
             android:id="@+id/iv_quality"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/default_img"/>
 
-        <ImageView
-            android:id="@+id/iv_samplingRate"
+        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="质量压缩后图片"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/btn_quality_compress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="质量压缩()"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_samplingRate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@mipmap/default_img"/>
+
+            <ImageView
+                android:id="@+id/iv_matrix"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@mipmap/default_img"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="采样率压缩后图片"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="矩形缩放后图片"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_sampling_rate_compress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="8dp"
+            android:text="采样率压缩()"/>
 
         <ImageView
             android:id="@+id/iv_sizeCompress"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/default_img"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尺寸压缩后图片"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/btn_size_compress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="8dp"
+            android:text="尺寸压缩()"/>
     </LinearLayout>
 </ScrollView>

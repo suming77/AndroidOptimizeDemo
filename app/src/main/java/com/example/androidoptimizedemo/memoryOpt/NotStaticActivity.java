@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.androidoptimizedemo.R;
+
 /**
  * @创建者 mingyan.su
  * @创建时间 2019/11/4 20:54
- * @类描述 ${TODO}AsyncTask造成的内存泄漏以及解决方法
+ * @类描述 ${TODO}非静态内部类导致的内存泄漏
  */
 public class NotStaticActivity extends AppCompatActivity {
     private static final String TAG = NotStaticActivity.class.getSimpleName();
@@ -19,6 +21,7 @@ public class NotStaticActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nothing);
 
         //保证非静态内部类实例只有一个
         if (sInnerClass == null) {

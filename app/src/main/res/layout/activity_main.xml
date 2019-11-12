@@ -9,93 +9,102 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#e7e7e7"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="图片优化相关"
+            android:textStyle="bold"/>
+
         <Button
-            android:id="@+id/btn_get_sync"
+            android:id="@+id/btn_not_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="GET同步请求"/>
+            android:text="非静态"/>
 
         <Button
-            android:id="@+id/btn_get_async"
+            android:id="@+id/btn_async_task"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#F44336"
             android:padding="8dp"
-            android:text="GET异步请求"/>
+            android:text="AsyncTask"/>
 
         <Button
-            android:id="@+id/btn_post_sync_str"
+            android:id="@+id/btn_thread"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#E91E63"
             android:padding="8dp"
-            android:text="Post同步请求(string)"/>
+            android:text="线程类"/>
 
         <Button
-            android:id="@+id/btn_post_async_str"
+            android:id="@+id/btn_handler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#9C27B0"
             android:padding="8dp"
-            android:text="Post异步请求(string)"/>
+            android:text="Handler"/>
 
         <Button
-            android:id="@+id/btn_post_key_value"
+            android:id="@+id/btn_single_instance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#673AB7"
             android:padding="8dp"
-            android:text="Post异步请求(键值对)"/>
+            android:text="static修饰的成员变量：单例"/>
 
         <Button
-            android:id="@+id/btn_post_key_value_more"
+            android:id="@+id/btn_listener"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#3F51B5"
             android:padding="8dp"
-            android:text="Post异步请求(多个键值对)"/>
+            android:text="监听类"/>
 
         <Button
-            android:id="@+id/btn_post_file"
+            android:id="@+id/btn_res"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#2196F3"
             android:padding="8dp"
-            android:text="Post异步请求(单个文件)"/>
+            android:text="相关资源"/>
 
         <Button
-            android:id="@+id/btn_post_form"
+            android:id="@+id/btn_include"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#4CAF50"
             android:padding="8dp"
-            android:text="Post提交表单"/>
+            android:text="布局优化:include、merge、Space、ViewStub"/>
 
         <Button
-            android:id="@+id/btn_post_streaming"
+            android:id="@+id/btn_constraint_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#FFEB3B"
             android:padding="8dp"
-            android:text="Post方式提交流"/>
+            android:text="ConstraintLayout布局"/>
 
         <Button
-            android:id="@+id/btn_post_multipart"
+            android:id="@+id/btn_image_opt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="#FFC107"
             android:padding="8dp"
-            android:text="post异步提交分块请求"/>
+            android:text="图片优化相关"/>
 
         <Button
             android:id="@+id/btn_header_set_read"

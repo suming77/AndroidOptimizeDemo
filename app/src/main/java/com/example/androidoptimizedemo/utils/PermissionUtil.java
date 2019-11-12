@@ -1,4 +1,4 @@
-package com.example.androidoptimizedemo.layoutOpt;
+package com.example.androidoptimizedemo.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -11,8 +11,8 @@ import com.example.androidoptimizedemo.R;
  * @创建时间 2019/11/6 19:40
  * @类描述 ${TODO}布局优化-<ConstraintLayout>的使用
  */
-public class ConstaintLayoutActivity extends AppCompatActivity {
-    private static final String TAG = ConstaintLayoutActivity.class.getSimpleName();
+public class ConstraintLayoutActivity extends AppCompatActivity {
+    private static final String TAG = ConstraintLayoutActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.example.androidoptimizedemo.R;
+
 /**
  * @创建者 mingyan.su
  * @创建时间 2019/11/4 20:54
@@ -17,6 +19,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nothing);
 
         //AsyncTask执行任务
         mAsyncTask = new AsyncTask<Void, Void, Void>() {

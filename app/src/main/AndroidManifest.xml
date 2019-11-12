@@ -19,13 +19,12 @@
         </activity>
         <activity android:name=".memoryOpt.NotStaticActivity"/>
         <activity android:name=".memoryOpt.AsyncTaskActivity"/>
-        <activity android:name=".memoryOpt.SingleInstanceClass"/>
         <activity android:name=".memoryOpt.HandlerActivity"/>
         <activity android:name=".memoryOpt.ThreadActivity"/>
         <activity android:name=".memoryOpt.ResActivity"/>
         <activity android:name=".layoutOpt.IncludeActivity"/>
-        <activity android:name=".layoutOpt.ConstaintLayoutActivity"/>
-        <activity android:name=".layoutOpt.ImageOptActivity"/>
+        <activity android:name=".layoutOpt.ConstraintLayoutActivity"/>
+        <activity android:name=".ImageOpt.ImageOptActivity"/>
         <activity android:name=".memoryOpt.ListenerActivity"/>
     </application>
 
