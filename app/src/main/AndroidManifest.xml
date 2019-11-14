@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.example.androidoptimizedemo">
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".memoryOpt.NotStaticActivity"/>
+        <activity android:name=".memoryOpt.NotStaticActivity"
+            />
         <activity android:name=".memoryOpt.AsyncTaskActivity"/>
         <activity android:name=".memoryOpt.HandlerActivity"/>
         <activity android:name=".memoryOpt.ThreadActivity"/>
@@ -26,6 +29,8 @@
         <activity android:name=".layoutOpt.ConstraintLayoutActivity"/>
         <activity android:name=".ImageOpt.ImageOptActivity"/>
         <activity android:name=".memoryOpt.ListenerActivity"/>
+        <activity android:name=".ImageOpt.GlidePicassoActivity"/>
+        <activity android:name=".ImageOpt.ThreadPoolActivity"/>
     </application>
 
 </manifest>

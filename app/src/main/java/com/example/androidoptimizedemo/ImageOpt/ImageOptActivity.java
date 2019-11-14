@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
 import com.example.androidoptimizedemo.R;
 import com.example.androidoptimizedemo.utils.PermissionUtil;
 
@@ -32,8 +33,8 @@ import java.io.FileOutputStream;
  * @创建时间 2019/11/8 9:44
  * @类描述 ${TODO}图片优化
  */
-public class ImageOptActivity extends AppCompatActivity implements PermissionUtil.RequestPermissionCallBack,
-        View.OnClickListener {
+public class ImageOptActivity extends AppCompatActivity implements View.OnClickListener,
+        PermissionUtil.RequestPermissionCallBack {
     private static final String TAG = ImageOptActivity.class.getSimpleName();
 
     private ImageView mIv_quality;

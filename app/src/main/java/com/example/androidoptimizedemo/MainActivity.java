@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.androidoptimizedemo.layoutOpt.ConstraintLayoutActivity;
+import com.example.androidoptimizedemo.ImageOpt.GlidePicassoActivity;
 import com.example.androidoptimizedemo.ImageOpt.ImageOptActivity;
+import com.example.androidoptimizedemo.ImageOpt.ThreadPoolActivity;
+import com.example.androidoptimizedemo.layoutOpt.ConstraintLayoutActivity;
 import com.example.androidoptimizedemo.layoutOpt.IncludeActivity;
 import com.example.androidoptimizedemo.memoryOpt.AsyncTaskActivity;
 import com.example.androidoptimizedemo.memoryOpt.HandlerActivity;
@@ -27,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         findViewById(R.id.btn_not_static).setOnClickListener(this);
         findViewById(R.id.btn_async_task).setOnClickListener(this);
         findViewById(R.id.btn_thread).setOnClickListener(this);
@@ -39,8 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_constraint_layout).setOnClickListener(this);
         findViewById(R.id.btn_image_opt).setOnClickListener(this);
 
-        findViewById(R.id.btn_header_set_read).setOnClickListener(this);
-        findViewById(R.id.btn_timeout).setOnClickListener(this);
+        findViewById(R.id.btn_glide_picasso).setOnClickListener(this);
+        findViewById(R.id.btn_thread_pool).setOnClickListener(this);
     }
 
     @Override
@@ -77,9 +78,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_image_opt://图片优化相关
                 cls = ImageOptActivity.class;
                 break;
-            case R.id.btn_header_set_read:
+            case R.id.btn_glide_picasso:
+                cls = GlidePicassoActivity.class;
                 break;
-            case R.id.btn_timeout:
+            case R.id.btn_thread_pool:
+                cls = ThreadPoolActivity.class;
                 break;
             default:
                 break;

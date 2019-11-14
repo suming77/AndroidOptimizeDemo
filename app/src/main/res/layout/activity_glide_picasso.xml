@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_glide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="glide"/>
+
+        <ImageView
+            android:id="@+id/iv_glide"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_img"/>
+
+        <ImageView
+            android:id="@+id/iv_glide2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_img"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_picasso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="picasso"/>
+
+        <ImageView
+            android:id="@+id/iv_picasso"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_img"/>
+
+        <ImageView
+            android:id="@+id/iv_picasso2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="12dp"
+            android:src="@mipmap/default_img"/>
+    </LinearLayout>
+
+</LinearLayout>
