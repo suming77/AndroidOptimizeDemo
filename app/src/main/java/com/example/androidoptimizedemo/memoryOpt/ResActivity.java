@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * @类描述 ${TODO}相关资源关闭/注销避免内存泄漏
  */
 public class ResActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = ResActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private TextView mTextView;
     private ObjectAnimator mAnimator;
 

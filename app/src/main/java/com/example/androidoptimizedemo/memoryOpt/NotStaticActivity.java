@@ -12,7 +12,7 @@ import com.example.androidoptimizedemo.R;
  * @类描述 ${TODO}非静态内部类导致的内存泄漏
  */
 public class NotStaticActivity extends AppCompatActivity {
-    private static final String TAG = NotStaticActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     //非静态内部类实例引用，设置为静态
     private static InnerClass sInnerClass;
     //静态内部类实例引用

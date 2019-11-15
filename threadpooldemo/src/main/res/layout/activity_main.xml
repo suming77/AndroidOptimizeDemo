@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="关闭线程池"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_thread_pool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="ThreadPoolExecutor!"/>
+
+    <Button
+        android:id="@+id/btn_new_fixed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#F44336"
+        android:padding="8dp"
+        android:text="定长线程池"/>
+
+    <Button
+        android:id="@+id/btn_new_cached"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#E91E63"
+        android:padding="8dp"
+        android:text="可缓存线程池"/>
+
+    <Button
+        android:id="@+id/btn_new_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#9C27B0"
+        android:padding="8dp"
+        android:text="单线程化线程池"/>
+
+    <Button
+        android:id="@+id/btn_scheduled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#673AB7"
+        android:padding="8dp"
+        android:text="定时线程池"/>
+
+    <Button
+        android:id="@+id/btn_listener"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#3F51B5"
+        android:padding="8dp"
+        android:text="监听类优化"/>
+
+    <Button
+        android:id="@+id/btn_res"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#2196F3"
+        android:padding="8dp"
+        android:text="相关资源优化"/>
+</LinearLayout>

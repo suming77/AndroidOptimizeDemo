@@ -13,7 +13,7 @@ import com.example.androidoptimizedemo.R;
  * @类描述 ${TODO}AsyncTask造成的内存泄漏以及解决方法
  */
 public class AsyncTaskActivity extends AppCompatActivity {
-    private static final String TAG = AsyncTaskActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private AsyncTask<Void, Void, Void> mAsyncTask;
 
     @Override

@@ -18,7 +18,7 @@ import com.squareup.picasso.Picasso;
  * @类描述 ${TODO}glide和picasso的简单使用
  */
 public class GlidePicassoActivity extends AppCompatActivity implements View.OnClickListener {
-    private static final String TAG = ImageOptActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private ImageView mIv_glide;
     private ImageView mIv_glide2;
     private ImageView mIv_picasso;

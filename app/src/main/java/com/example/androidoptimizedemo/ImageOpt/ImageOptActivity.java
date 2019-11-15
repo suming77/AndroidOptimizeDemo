@@ -35,7 +35,7 @@ import java.io.FileOutputStream;
  */
 public class ImageOptActivity extends AppCompatActivity implements View.OnClickListener,
         PermissionUtil.RequestPermissionCallBack {
-    private static final String TAG = ImageOptActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
 
     private ImageView mIv_quality;
     private ImageView mIv_samplingRate;

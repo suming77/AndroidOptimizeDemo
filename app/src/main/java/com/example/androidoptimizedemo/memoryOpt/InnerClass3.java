@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * @类描述 ${TODO}解决方法： 2、将外部类抽取出来封装成一个单例。
  */
 public class InnerClass3 extends AppCompatActivity {
-    private static final String TAG = InnerClass3.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private static InnerClass3 sInnerClass3;
 
     //单例

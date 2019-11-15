@@ -12,7 +12,7 @@ import com.example.androidoptimizedemo.R;
  * @类描述 ${TODO}布局优化-<ConstraintLayout>的使用
  */
 public class ConstraintLayoutActivity extends AppCompatActivity {
-    private static final String TAG = ConstraintLayoutActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

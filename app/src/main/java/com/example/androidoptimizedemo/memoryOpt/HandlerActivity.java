@@ -18,7 +18,7 @@ import java.lang.ref.WeakReference;
  * @类描述 ${TODO}Handler造成的内存泄漏以及解决方法
  */
 public class HandlerActivity extends AppCompatActivity {
-    private static final String TAG = HandlerActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private Handler mHandler;
 
     @Override

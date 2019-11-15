@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * @类描述 ${TODO}线程池简单使用
  */
 public class ThreadPoolActivity extends AppCompatActivity {
-    private static final String TAG = ThreadPoolActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,12 +35,13 @@ public class ThreadPoolActivity extends AppCompatActivity {
                 public void run() {
                     try {
                         Log.e(TAG, "线程：" + Thread.currentThread().getName() + ",正在执行第" + index + "个任务");
-                        Thread.currentThread().sleep(3000);
+                        Thread.currentThread().sleep(2000);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             };
+            //分别将请求添加到线程池中
             executor.execute(runnable);
         }
     }

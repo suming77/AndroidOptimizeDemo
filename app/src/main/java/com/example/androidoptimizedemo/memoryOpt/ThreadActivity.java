@@ -12,7 +12,7 @@ import com.example.androidoptimizedemo.R;
  * @类描述 ${TODO}Thread类造成的内存泄漏以及解决方法
  */
 public class ThreadActivity extends AppCompatActivity {
-    private static final String TAG = ThreadActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private RightThread mRightThread;
 
     @Override

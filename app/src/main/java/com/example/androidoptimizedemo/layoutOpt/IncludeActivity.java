@@ -13,7 +13,7 @@ import com.example.androidoptimizedemo.R;
  * @类描述 ${TODO}布局优化-<include>标签 <merge>标签 <Space>标签 <ViewStub>标签
  */
 public class IncludeActivity extends AppCompatActivity {
-    private static final String TAG = IncludeActivity.class.getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
