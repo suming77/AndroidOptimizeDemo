@@ -33,7 +33,7 @@ public class SingleInstanceClass {
 //    }
 
     //单例方式获取实例
-    public SingleInstanceClass getInstance(Context context) {
+    public static SingleInstanceClass getInstance(Context context) {
         if (sInstanceClass == null) {
             sInstanceClass = new SingleInstanceClass(context);
         }

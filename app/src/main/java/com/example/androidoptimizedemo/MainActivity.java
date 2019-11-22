@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 cls = HandlerActivity.class;
                 break;
             case R.id.btn_single_instance://static修饰的成员变量：单例
-                SingleInstanceClass instanceClass = new SingleInstanceClass(this);
+                SingleInstanceClass.getInstance(this);
                 break;
             case R.id.btn_listener://监听
                 cls = ListenerActivity.class;

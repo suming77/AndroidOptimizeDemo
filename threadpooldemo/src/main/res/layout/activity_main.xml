@@ -66,20 +66,12 @@
         android:text="定时线程池"/>
 
     <Button
-        android:id="@+id/btn_listener"
+        android:id="@+id/btn_threadpool_manager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="#3F51B5"
         android:padding="8dp"
-        android:text="监听类优化"/>
+        android:text="线程池管理类"/>
 
-    <Button
-        android:id="@+id/btn_res"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="#2196F3"
-        android:padding="8dp"
-        android:text="相关资源优化"/>
 </LinearLayout>

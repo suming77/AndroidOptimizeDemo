@@ -1,1 +1,1 @@
-include ':app', ':threadpooldemo'
+include ':app', ':threadpooldemo', ':referencedemo'

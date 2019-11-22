@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * 线程池
+ * 我的博客：https://blog.csdn.net/m0_37796683
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private String TAG = this.getClass().getSimpleName();
@@ -31,13 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_new_cached).setOnClickListener(this);
         findViewById(R.id.btn_new_single).setOnClickListener(this);
         findViewById(R.id.btn_scheduled).setOnClickListener(this);
+        findViewById(R.id.btn_threadpool_manager).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_stop:
-                //关闭线程池
+                //4.关闭线程池
                 mExecutor.shutdown();
                 break;
             case R.id.btn_thread_pool://普通线程池创建
@@ -55,12 +57,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_scheduled://定时线程池
                 newScheduledThreadPool();
                 break;
-
+            case R.id.btn_threadpool_manager://线程池管理类
+                threadPoolManager();
+                break;
             default:
                 break;
         }
     }
-
 
     /**
      * 普通创建
@@ -83,8 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             };
-            //3执行请求：将请求加入到线程池中
+            //3.执行请求：将请求加入到线程池中
             executor.execute(runnable);
+//          Future<?> submit = executor.submit(runnable);
         }
 
         mExecutor = executor;
@@ -198,5 +202,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mExecutor = scheduledExecutorService;
     }
 
+
+    /**
+     * 线程池管理类使用
+     */
+    private void threadPoolManager() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.currentThread().sleep(2000);
+                    Log.e(TAG, "线程池管理类：" + Thread.currentThread().getName() + " 正在执行任务");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        ThreadPoolManager.getInstance().execute(runnable);//执行请求
+        ThreadPoolManager.getInstance().remove(runnable);//移除请求
+    }
 
 }
