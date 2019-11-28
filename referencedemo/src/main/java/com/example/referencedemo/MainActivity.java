@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        phantomReference();
         weakReference(this);
+
     }
 
 
@@ -48,11 +49,11 @@ public class MainActivity extends AppCompatActivity {
         ImageView imageView = findViewById(R.id.iv_soft_reference);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round);
         SoftReference<Bitmap> softReference = new SoftReference<>(bitmap);
-        if (true){
+//        if ("内存不足") {
             //将软引用中的对象设置为null，否则既持有强引用也持有软引用是无法回收的
             bitmap = null;
             System.gc();
-        }
+//        }
         if (softReference.get() != null) {
             imageView.setImageBitmap(softReference.get());
         } else {
