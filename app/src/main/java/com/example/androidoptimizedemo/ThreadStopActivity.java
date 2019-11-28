@@ -18,6 +18,7 @@ public class ThreadStopActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         mThread = new Thread(new MyThread());
         mThread.start();
         mThread.interrupt();
