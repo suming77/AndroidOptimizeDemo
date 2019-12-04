@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.example.androidoptimizedemo.ImageOpt.GlidePicassoActivity;
 import com.example.androidoptimizedemo.ImageOpt.ImageOptActivity;
 import com.example.androidoptimizedemo.ImageOpt.ThreadPoolActivity;
+import com.example.androidoptimizedemo.ThreadStop.ThreadStopActivity;
 import com.example.androidoptimizedemo.layoutOpt.ConstraintLayoutActivity;
 import com.example.androidoptimizedemo.layoutOpt.IncludeActivity;
 import com.example.androidoptimizedemo.memoryOpt.AsyncTaskActivity;
@@ -78,11 +79,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_image_opt://图片优化相关
                 cls = ImageOptActivity.class;
                 break;
-            case R.id.btn_glide_picasso:
+            case R.id.btn_glide_picasso://glide和picasso库使用
                 cls = GlidePicassoActivity.class;
                 break;
-            case R.id.btn_thread_pool:
+            case R.id.btn_thread_pool://线程池
                 cls = ThreadPoolActivity.class;
+                break;
+            case R.id.btn_thread_stop://线程停止的几种方式
+                cls = ThreadStopActivity.class;
                 break;
             default:
                 break;

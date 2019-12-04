@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,14 +16,14 @@
             android:gravity="center"
             android:padding="8dp"
             android:text="性能优化相关"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_not_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="非静态"/>
+            android:text="非静态" />
 
         <Button
             android:id="@+id/btn_async_task"
@@ -32,7 +32,7 @@
             android:layout_marginTop="20dp"
             android:background="#F44336"
             android:padding="8dp"
-            android:text="AsyncTask"/>
+            android:text="AsyncTask" />
 
         <Button
             android:id="@+id/btn_thread"
@@ -41,7 +41,7 @@
             android:layout_marginTop="20dp"
             android:background="#E91E63"
             android:padding="8dp"
-            android:text="线程类"/>
+            android:text="线程类" />
 
         <Button
             android:id="@+id/btn_handler"
@@ -50,7 +50,7 @@
             android:layout_marginTop="20dp"
             android:background="#9C27B0"
             android:padding="8dp"
-            android:text="Handler"/>
+            android:text="Handler" />
 
         <Button
             android:id="@+id/btn_single_instance"
@@ -59,7 +59,7 @@
             android:layout_marginTop="20dp"
             android:background="#673AB7"
             android:padding="8dp"
-            android:text="static修饰的成员变量：单例"/>
+            android:text="static修饰的成员变量：单例" />
 
         <Button
             android:id="@+id/btn_listener"
@@ -68,7 +68,7 @@
             android:layout_marginTop="20dp"
             android:background="#3F51B5"
             android:padding="8dp"
-            android:text="监听类优化"/>
+            android:text="监听类优化" />
 
         <Button
             android:id="@+id/btn_res"
@@ -77,7 +77,7 @@
             android:layout_marginTop="20dp"
             android:background="#2196F3"
             android:padding="8dp"
-            android:text="相关资源优化"/>
+            android:text="相关资源优化" />
 
         <Button
             android:id="@+id/btn_include"
@@ -86,7 +86,7 @@
             android:layout_marginTop="20dp"
             android:background="#4CAF50"
             android:padding="8dp"
-            android:text="布局优化:include、merge、Space、ViewStub"/>
+            android:text="布局优化:include、merge、Space、ViewStub" />
 
         <Button
             android:id="@+id/btn_constraint_layout"
@@ -95,7 +95,7 @@
             android:layout_marginTop="20dp"
             android:background="#FFEB3B"
             android:padding="8dp"
-            android:text="布局优化-ConstraintLayout布局"/>
+            android:text="布局优化-ConstraintLayout布局" />
 
         <Button
             android:id="@+id/btn_image_opt"
@@ -104,7 +104,7 @@
             android:layout_marginTop="20dp"
             android:background="#FFC107"
             android:padding="8dp"
-            android:text="图片优化相关"/>
+            android:text="图片优化相关" />
 
         <Button
             android:id="@+id/btn_glide_picasso"
@@ -113,17 +113,26 @@
             android:layout_marginTop="20dp"
             android:background="#FF9800"
             android:padding="8dp"
-            android:text="图片库-glide_picasso"/>
+            android:text="图片库-glide_picasso" />
 
         <Button
             android:id="@+id/btn_thread_pool"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
             android:background="#FF5722"
             android:padding="8dp"
-            android:text="多线程优化-线程池"/>
+            android:text="多线程优化-线程池" />
+
+        <Button
+            android:id="@+id/btn_thread_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#F44336"
+            android:padding="8dp"
+            android:text="线程停止的正确方式" />
 
     </LinearLayout>
 </ScrollView>
